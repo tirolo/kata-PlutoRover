@@ -37,7 +37,7 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
 
             // Assert
             var actualPlutoRoverPosition = plutoRover.ReportPosition();
-            var expectedPlutoRoverPosition = "0,-1,N";
+            var expectedPlutoRoverPosition = "0,-1,N"; // We will break this guy here :/ liskov wont be happy with it :P
 
             Assert.AreEqual(expectedPlutoRoverPosition, actualPlutoRoverPosition);
         }
@@ -118,6 +118,22 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
             // Assert
             var actualRoverPosition = plutoRover.ReportPosition();
             var expectedRoverPosition = "0,0,W";
+
+            Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
+        }
+
+        [Test]
+        public void Rover_Should_Move_On_The_Grid_As_A_Sphere()
+        {
+            // Arrange
+            Domain.PlutoRover plutoRover = new Domain.PlutoRover();
+
+            // Act
+            plutoRover.ExecuteCommand("BBLFRR");
+
+            // Assert
+            var actualRoverPosition = plutoRover.ReportPosition();
+            var expectedRoverPosition = "99,98,E";
 
             Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
         }
