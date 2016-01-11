@@ -57,5 +57,21 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
 
             Assert.AreEqual(expectedPlutoRoverPosition, actualPlutoRoverPosition);
         }
+
+        [Test]
+        public void Rover_Should_Spin_Left_And_Keep_Same_Position_When_L_Command_Given()
+        {
+            // Arrange
+            Domain.PlutoRover plutoRover = new Domain.PlutoRover();
+
+            // Act
+            plutoRover.ExecuteCommand("L");
+
+            // Assert
+            var actualRoverPosition = plutoRover.ReportPosition();
+            var expectedRoverPosition = "0,0,W";
+
+            Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
+        }
     }
 }
