@@ -14,13 +14,13 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
         public void Rover_Should_Move_Forward_And_Keep_Same_Heading_When_F_Command_Given()
         {
             // Arrange
-            PlutoRover plutoRover = new PlutoRover();
+            Domain.PlutoRover plutoRover = new Domain.PlutoRover();
 
             // Act
             plutoRover.ExecuteCommand("F");
 
             // Assert
-            var actualPlutoRoverPosition = plutoRover.ReportPostition();
+            var actualPlutoRoverPosition = plutoRover.ReportPosition();
             var expectedPlutoRoverPosition = "0,1,N";
 
             Assert.AreEqual(expectedPlutoRoverPosition, actualPlutoRoverPosition);
