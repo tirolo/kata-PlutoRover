@@ -11,9 +11,19 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
     public class PlutoRoverTests
     {
         [Test]
-        public void Test()
+        public void Rover_Should_Move_Forward_And_Keep_Same_Heading_When_F_Command_Given()
         {
-            Assert.IsTrue(true);
+            // Arrange
+            PlutoRover plutoRover = new PlutoRover();
+
+            // Act
+            plutoRover.ExecuteCommand("F");
+
+            // Assert
+            var actualPlutoRoverPosition = plutoRover.ReportPostition();
+            var expectedPlutoRoverPosition = "0,1,N";
+
+            Assert.AreEqual(expectedPlutoRoverPosition, actualPlutoRoverPosition);
         }
     }
 }
