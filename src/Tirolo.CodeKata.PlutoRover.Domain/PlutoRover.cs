@@ -14,11 +14,29 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
             this.CurrentRoverHeadingDirection = new RoverHeadingDirection();
         }
 
-        public void ExecuteCommand(string command)
+        public void ExecuteCommand(string commands)
         {
-            if (command.Equals("F"))
+            commands = commands.ToUpper();
+
+            foreach (var command in commands)
+            {
+                ExecuteCommand(command);
+            }
+        }
+
+        public void ExecuteCommand(char command)
+        {
+            if (command.Equals('F'))
             {
                 this.CurrentRoverPosition.MoveForwards(this.CurrentRoverHeadingDirection);
+            }
+            else if (command.Equals('B'))
+            {
+                this.CurrentRoverPosition.MoveBackwards(this.CurrentRoverHeadingDirection);
+            }
+            else
+            {
+                throw new NotSupportedException("Command not supported.");
             }
         }
 

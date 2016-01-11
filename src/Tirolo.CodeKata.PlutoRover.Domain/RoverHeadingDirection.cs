@@ -12,7 +12,7 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
         {
             this.HeadingDirection = headingDirection;
         }
-
+        
         public HeadingDirections HeadingDirection { get; private set; }
 
         public enum HeadingDirections

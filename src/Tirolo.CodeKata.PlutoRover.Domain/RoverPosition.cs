@@ -13,16 +13,36 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
             {
                 default:
                 case RoverHeadingDirection.HeadingDirections.N:
-                        Y += 1;
+                    Y += 1;
                     break;
                 case RoverHeadingDirection.HeadingDirections.E:
-                        X += 1;
+                    X += 1;
                     break;
                 case RoverHeadingDirection.HeadingDirections.S:
-                        Y -= 1;
+                    Y -= 1;
                     break;
                 case RoverHeadingDirection.HeadingDirections.W:
-                        X -= 1;
+                    X -= 1;
+                    break;
+            }
+        }
+
+        public void MoveBackwards(RoverHeadingDirection currentRoverHeadingDirection)
+        {
+            switch (currentRoverHeadingDirection.HeadingDirection)
+            {
+                default:
+                case RoverHeadingDirection.HeadingDirections.N:
+                    Y -= 1;
+                    break;
+                case RoverHeadingDirection.HeadingDirections.E:
+                    X -= 1;
+                    break;
+                case RoverHeadingDirection.HeadingDirections.S:
+                    Y += 1;
+                    break;
+                case RoverHeadingDirection.HeadingDirections.W:
+                    X += 1;
                     break;
             }
         }
