@@ -101,7 +101,23 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
 
             // Assert
             var actualRoverPosition = plutoRover.ReportPosition();
-            var expectedRoverPosition = "0,0,N";
+            var expectedRoverPosition = "0,0,E";
+
+            Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
+        }
+
+        [Test]
+        public void Rover_Should_Be_At_0_0_W_When_FRFRFRFRL_Command_Given()
+        {
+            // Arrange
+            Domain.PlutoRover plutoRover = new Domain.PlutoRover();
+
+            // Act
+            plutoRover.ExecuteCommand("FRFRFRFRL");
+
+            // Assert
+            var actualRoverPosition = plutoRover.ReportPosition();
+            var expectedRoverPosition = "0,0,W";
 
             Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
         }

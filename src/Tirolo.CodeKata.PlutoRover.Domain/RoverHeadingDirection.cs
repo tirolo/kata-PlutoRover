@@ -39,6 +39,13 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
                 else
                     this.HeadingDirection = (HeadingDirections)currentHeadingDirection - 1;
             }
+            else if (string.Equals(direction.ToUpper(), "R"))
+            {
+                if (this.HeadingDirection == HeadingDirections.W)
+                    this.HeadingDirection = HeadingDirections.N;
+                else
+                    this.HeadingDirection = (HeadingDirections)currentHeadingDirection + 1;
+            }
         }
     }
 }
