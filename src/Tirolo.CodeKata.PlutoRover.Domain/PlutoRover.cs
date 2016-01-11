@@ -34,6 +34,10 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
             {
                 this.CurrentRoverPosition.MoveBackwards(this.CurrentRoverHeadingDirection);
             }
+            else if (command.Equals('L'))
+            {
+                this.CurrentRoverHeadingDirection.Spin("L");
+            }
             else
             {
                 throw new NotSupportedException("Command not supported.");

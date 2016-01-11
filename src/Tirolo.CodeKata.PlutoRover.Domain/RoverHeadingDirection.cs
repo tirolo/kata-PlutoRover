@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 
 namespace Tirolo.CodeKata.PlutoRover.Domain
 {
@@ -25,6 +26,19 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
             S = 2,
             [Description("West")]
             W = 3
+        }
+
+        public void Spin(string direction)
+        {
+            int currentHeadingDirection = (int)this.HeadingDirection;
+
+            if (string.Equals(direction.ToUpper(), "L"))
+            {
+                if (this.HeadingDirection == HeadingDirections.N)
+                    this.HeadingDirection = HeadingDirections.W;
+                else
+                    this.HeadingDirection = (HeadingDirections)currentHeadingDirection - 1;
+            }
         }
     }
 }

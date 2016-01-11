@@ -43,7 +43,7 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
         }
 
         [Test]
-        public void Rover_Should_Process_Multiple_Commands_Given()
+        public void Rover_Should_Be_At_0_0_N_When_FFBFFBBB_Command_Given()
         {
             // Arrange
             Domain.PlutoRover plutoRover = new Domain.PlutoRover();
@@ -70,6 +70,22 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
             // Assert
             var actualRoverPosition = plutoRover.ReportPosition();
             var expectedRoverPosition = "0,0,W";
+
+            Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
+        }
+
+        [Test]
+        public void Rover_Should_Be_At_1_0_E_When_FLFFLFLFFF_Command_Given()
+        {
+            // Arrange
+            Domain.PlutoRover plutoRover = new Domain.PlutoRover();
+
+            // Act
+            plutoRover.ExecuteCommand("FLFFLFLFFF");
+
+            // Assert
+            var actualRoverPosition = plutoRover.ReportPosition();
+            var expectedRoverPosition = "1,0,E";
 
             Assert.AreEqual(expectedRoverPosition, actualRoverPosition);
         }
