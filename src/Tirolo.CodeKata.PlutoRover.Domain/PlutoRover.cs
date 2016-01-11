@@ -14,6 +14,11 @@ namespace Tirolo.CodeKata.PlutoRover.Domain
             this.CurrentRoverHeadingDirection = new RoverHeadingDirection();
         }
 
+        public PlutoRover(int xMaxGridSize, int yMaxGridSize) : this()
+        {
+            this.CurrentRoverPosition = new RoverPosition(xMaxGridSize, yMaxGridSize);
+        }
+
         public void ExecuteCommand(string commands)
         {
             commands = commands.ToUpper();

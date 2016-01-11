@@ -37,7 +37,7 @@ namespace Tirolo.CodeKata.PlutoRover.Tests
 
             // Assert
             var actualPlutoRoverPosition = plutoRover.ReportPosition();
-            var expectedPlutoRoverPosition = "0,-1,N"; // We will break this guy here :/ liskov wont be happy with it :P
+            var expectedPlutoRoverPosition = "0,99,N"; // I had to fix this test, potentially a Open/Close principle issue here.
 
             Assert.AreEqual(expectedPlutoRoverPosition, actualPlutoRoverPosition);
         }
